@@ -3,7 +3,10 @@
 [node name="Node3D" type="Node3D" unique_id=1372122283]
 
 [node name="Node3D" type="Node3D" parent="." unique_id=557333453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.79088175)
 
 [node name="Node3D2" type="Node3D" parent="." unique_id=1731781367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60672057, 0)
 
 [node name="Node3D67" type="Node3D" parent="." unique_id=821111609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62181604, 0, 0)
