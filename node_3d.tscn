@@ -1,12 +1,78 @@
 [gd_scene format=3 uid="uid://mgp02mkor0at"]
 
-[node name="Node3D" type="Node3D" unique_id=1372122283]
+[ext_resource type="PackedScene" uid="uid://dl065pjmajoot" path="res://falling_ball.tscn" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://dh8w8bw2m233i" path="res://john_character.tscn" id="1_noarx"]
 
-[node name="Node3D" type="Node3D" parent="." unique_id=557333453]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.79088175)
+[sub_resource type="BoxMesh" id="BoxMesh_amx8r"]
+size = Vector3(5, 0.1, 5)
 
-[node name="Node3D2" type="Node3D" parent="." unique_id=1731781367]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60672057, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_amx8r"]
+size = Vector3(5, 0.1, 5)
 
-[node name="Node3D67" type="Node3D" parent="." unique_id=821111609]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62181604, 0, 0)
+[sub_resource type="BoxMesh" id="BoxMesh_cjt8b"]
+size = Vector3(2, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew1vx"]
+size = Vector3(2, 0.1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ew1vx"]
+size = Vector3(5, 1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjt8b"]
+size = Vector3(5, 1, 0.1)
+
+[node name="level-1" type="Node3D" unique_id=166189663]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1299609926]
+transform = Transform3D(0.5, 0, 0, 0, 0.40338853, 0.29542804, 0, -0.29542804, 0.40338853, 0, 1.6296567, 3.5408597)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1603802590]
+transform = Transform3D(-0.0022397782, -0.32020202, 0.38401258, 2.9802322e-08, 0.38401645, 0.3202052, -0.499995, 0.0014344002, -0.0017202041, 3.2779772, 1.6707712, -0.08945346)
+shadow_enabled = true
+
+[node name="john-character" parent="." unique_id=1033239084 instance=ExtResource("1_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05067253, 0.29379058, -0.5)
+
+[node name="balls" type="Node3D" parent="." unique_id=1152387638]
+
+[node name="falling-ball" parent="balls" unique_id=419178437 instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30248657, 2.1081831, -5.501147)
+
+[node name="falling-ball2" parent="balls" unique_id=1438545837 instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37644407, 2.1081831, -5.8555865)
+
+[node name="falling-ball3" parent="balls" unique_id=1382943914 instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037172288, 1.758657, -4.977085)
+
+[node name="environment" type="Node3D" parent="." unique_id=1585601498]
+
+[node name="john-floor" type="StaticBody3D" parent="environment" unique_id=1405427114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06634951, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environment/john-floor" unique_id=2060301976]
+mesh = SubResource("BoxMesh_amx8r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/john-floor" unique_id=496232722]
+shape = SubResource("BoxShape3D_amx8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="environment" unique_id=1251819452]
+transform = Transform3D(1, 0, 0, 0, 0.88859284, -0.45869678, 0, 0.45869678, 0.88859284, 0, 0.7489711, -4.061093)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environment/StaticBody3D" unique_id=573022599]
+mesh = SubResource("BoxMesh_cjt8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/StaticBody3D" unique_id=401817244]
+shape = SubResource("BoxShape3D_ew1vx")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="environment" unique_id=1129190269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.509076)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environment/StaticBody3D2" unique_id=375871417]
+mesh = SubResource("BoxMesh_ew1vx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/StaticBody3D2" unique_id=445492262]
+shape = SubResource("BoxShape3D_cjt8b")

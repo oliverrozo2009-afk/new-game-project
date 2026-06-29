@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dh8w8bw2m233i"]
+
+[ext_resource type="Script" uid="uid://bseph2xa1i45r" path="res://john_character.gd" id="1_7fx3y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cjt8b"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ew1vx"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="john-character" type="CharacterBody3D" unique_id=1033239084]
+script = ExtResource("1_7fx3y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=716638689]
+mesh = SubResource("BoxMesh_cjt8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1693861695]
+shape = SubResource("BoxShape3D_ew1vx")

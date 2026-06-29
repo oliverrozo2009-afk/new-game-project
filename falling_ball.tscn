@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dl065pjmajoot"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_amx8r"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cjt8b"]
+radius = 0.25
+
+[node name="falling-ball" type="RigidBody3D" unique_id=419178437]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=801572756]
+mesh = SubResource("SphereMesh_amx8r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=495535161]
+shape = SubResource("SphereShape3D_cjt8b")
