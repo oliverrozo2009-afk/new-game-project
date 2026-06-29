@@ -24,15 +24,14 @@ size = Vector3(5, 1, 0.1)
 [node name="level-1" type="Node3D" unique_id=166189663]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1299609926]
-transform = Transform3D(0.5, 0, 0, 0, 0.40338853, 0.29542804, 0, -0.29542804, 0.40338853, 0, 1.6296567, 3.5408597)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1603802590]
 transform = Transform3D(-0.0022397782, -0.32020202, 0.38401258, 2.9802322e-08, 0.38401645, 0.3202052, -0.499995, 0.0014344002, -0.0017202041, 3.2779772, 1.6707712, -0.08945346)
 shadow_enabled = true
 
 [node name="john-character" parent="." unique_id=1033239084 instance=ExtResource("1_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05067253, 0.29379058, -0.5)
+
+[node name="Camera3D" type="Camera3D" parent="john-character" unique_id=553695622]
 
 [node name="balls" type="Node3D" parent="." unique_id=1152387638]
 
